@@ -1,0 +1,32 @@
+{% extends "hello/layout.html" %}
+
+{% block title %}Lil Hello project{% endblock %}
+
+{% block extra_css %}
+<style>
+    body{
+    background-color: #061f4a;
+    color: #ca1d59;
+    }
+    a:hover {
+    color: #619b05;  
+    text-decoration: none; 
+    }
+    a:active {
+        color: #af0000;
+        text-decoration: none;
+    }
+    a{
+        color: rgb(42, 143, 198);
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <p>wellcome to my Hello project</p>
+    <input type="text" placeholder="enter your name here">
+    <p>thanks for stopping by.</p>
+    <h3>Don't click on <a href="{% url 'wait' %}">Hello</a>. I don't like to greet you.</h3>
+
+{% endblock %}

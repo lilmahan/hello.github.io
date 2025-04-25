@@ -1,0 +1,32 @@
+{% extends "hello/layout.html "%}
+
+{% block title %}Again??{% endblock %}
+
+{% block extra_css %}
+<style>
+    body{
+    background-color: #061f4a;
+    color: #ca1d59;
+    }
+    a:hover {
+    color: #619b05;  
+    text-decoration: none; 
+    }
+    a:active {
+        color: #af0000;
+        text-decoration: none;
+    }
+    a{
+        color: rgb(42, 143, 198);
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<h1>What just happend?</h1>
+<h2>Are we in another page?</h2>
+<h2>Oh my god you clicked on <a href="{% url 'scroll' %}">hello</a> again didn't you?</h2>
+
+{% endblock %}

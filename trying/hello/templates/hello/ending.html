@@ -1,0 +1,71 @@
+{% extends "hello/layout.html" %}
+
+{% block title %}ending{% endblock %}
+
+{% block extra_css %}
+<style>
+    body{
+    background-color: #061f4a;
+    color: #ca1d59;
+    }
+    a:hover {
+    color: #619b05;  
+    text-decoration: none; 
+    }
+    a:active {
+        color: #af0000;
+        text-decoration: none;
+    }
+    a{
+        color: rgb(42, 143, 198);
+        text-decoration: none;
+    }
+    #lastm {
+            font-size: 50px;
+            font-weight: bold;
+            color: #ff5733;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            display: none;  /* Hidden initially */
+    }
+    #submit {
+        background-color: bisque;
+        color:#ca1d59;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div id="content">
+<h2>alright, I give up.</h2>
+<h2>I'm going to say hello to you</h2>
+<h3>I can't remember your name though, enter it again for me please.</h3>
+
+<input id="input" type="text" placeholder="enter it here">
+<button type="submit" id="submit">Submit</button>
+</div>
+
+<h1 style="display: none;" id="lastm"></h1>
+
+<script>
+const input = document.getElementById('input');
+const submit = document.getElementById('submit');
+const lastm = document.getElementById('lastm');
+const content = document.getElementById('content');
+
+submit.addEventListener('click', () => {
+    const name = input.value.trim();
+
+    if (name !== '') {
+    // Hide the main content
+    content.style.display = 'none';
+
+    // Show the final message
+    lastm.textContent = `FUCK YOU ${name} ,bye.`;
+    lastm.style.display = 'block';
+    }
+});
+</script>
+
+{% endblock %}

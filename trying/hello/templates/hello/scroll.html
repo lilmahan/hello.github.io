@@ -1,0 +1,41 @@
+{% extends "hello/layout.html" %}
+
+{% block title %}Sroll{% endblock %}
+ 
+{% block extra_css %}
+<style>
+    h1 {
+        color: salmon;
+        font-size: 2rem;
+    }
+    body {
+        height: 200vh;
+        background-color: #061f4a;
+        color: #ca1d59;
+    }
+    h3 {
+        margin: 1000px 400px;
+    }
+    a:hover {
+    color: #619b05;  
+    text-decoration: none; 
+    }
+    a:active {
+        color: #af0000;
+        text-decoration: none;
+    }
+    a{
+        color: rgb(42, 143, 198);
+        text-decoration: none;
+    }
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+<h1>that's it, Im hiding the h button.</h1>
+
+<h3><a href="{% url 'repeate' %}">hello</a></h3>
+
+{% endblock%}

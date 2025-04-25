@@ -1,0 +1,66 @@
+{% extends "hello/layout.html" %}
+
+{% block title %}move{% endblock %}
+
+{% block extra_css %}
+<style>
+    body{
+    background-color: #061f4a;
+    color: #ca1d59;
+    }
+    a:hover {
+    color: #619b05;  
+    text-decoration: none; 
+    }
+    a:active {
+        color: #af0000;
+        text-decoration: none;
+    }
+    a{
+        color: rgb(42, 143, 198);
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block body%}
+
+<h1>I swear even the hello button doesn't want to say hello to you.</h1>
+<h2>try it yourself.</h2>
+
+<h3 id="hello">hello</h3>
+<a id="secret-link" href="{% url 'ending' %}" style="display: none;"></a>
+
+
+<script>
+    const hello = document.getElementById('hello');
+    const link = document.getElementById('secret-link');
+    let moveCount = 0;
+    const maxMoves = 6;
+  
+    function getRandomColor() {
+      // returns a random hex color
+      return '#' + Math.floor(Math.random()*16777215).toString(16);
+    }
+  
+    hello.addEventListener('click', () => {
+      if (moveCount < maxMoves) {
+        const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+        const randomY = Math.floor(Math.random() * (window.innerHeight - 100));
+        hello.style.position = 'absolute';
+        hello.style.left = `${randomX}px`;
+        hello.style.top = `${randomY}px`;
+        hello.style.color = getRandomColor();  // 🎨 change text color
+        moveCount++;
+      }
+  
+      if (moveCount === maxMoves) {
+        link.style.display = 'inline';
+        link.appendChild(hello);
+      }
+    });
+  </script>
+  
+  
+  
+{% endblock %}
