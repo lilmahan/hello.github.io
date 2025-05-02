@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xqv$ndnld1hr$py)8^h-73(2gh7foghpyd9zi5055gf16f&c10
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['hellogithubio-production.up.railway.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
